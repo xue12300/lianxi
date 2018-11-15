@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="{webroot:public/javascript/jquery-3.2.1.min.js}"></script>
+</head>
+<body>
+    <form action="{url:security/reg_ok}" method="post" onsubmit="return sign();">
+       <table>
+                <tr>
+                    <td>用户名</td>
+                    <td><input type="text" name="nickname"><span></span></td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><input type="password" name="staffcode"><span></span></td>
+                </tr>
+                <tr>
+                    <td>确认密码</td>
+                    <td><input type="password" name="recode"><span></span></td>
+                </tr>
+                <tr>
+                    <td>真实姓名</td>
+                    <td><input type="text" name="staffname"><span></span></td>
+                </tr>
+                <tr>
+                    <td>工资</td>
+                    <td><input type="text"  name="salary"><span></span></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="注册"></td>
+                </tr>
+       </table>
+    </form>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        //姓名
+         $("input[name=nickname]").blur(function(){
+            var name=$(this).val();
+            if (name=='')
+             {
+                $(this).next().text('不能为空');
+                
+             }
+        })
+        //密码
+        $("input[name=staffcode]").blur(function(){
+            var code=$(this).val();
+            if (code=='')
+             {
+                $(this).next().text('不能为空');
+                
+             }
+        })
+        //工资
+        $("input[name=salary]").blur(function(){
+            var salary=$(this).val();
+            if (salary=='')
+             {
+                $(this).next().text('不能为空');
+                
+             }
+         });
+     
+    })
+</script>
